@@ -209,5 +209,34 @@ fun main() {
         }
     }
 
+    for (num in 1..10){
+        print("$num ")
+    }
+    println("\nFor loop 1 done")
+    for (i in 1 until 10){
+        print("$i ")
+    }
+    println("\nFor loop 2 done")
+    for (i in 10 downTo 1){
+        print("$i ")
+    }
+    println("\nFor loop 3 done")
+    for (i in 10 downTo 1 step 2){ // udskriver kun hver anden
+        print("$i ")
+    }
+    println("\nFor loop 4 done")
+
+
+    var humidityLevel = 80
+    var humidityFeel = "humid"
+
+    while (humidityFeel == "humid"){
+        humidityLevel -= 5
+        println("$humidityLevel humidity decreased")
+        if (humidityLevel <= 60){
+            humidityFeel = "comfy"
+            println("It's comfy now")
+        }
+    }
 
 }
