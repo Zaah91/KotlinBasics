@@ -114,8 +114,8 @@ fun main() {
         println("use technique")
     }
 
-    var age = 17
-    val  drinkingAge = 21
+    var age = 15
+    val drinkingAge = 21
     val votingAge = 18
     val drivingAge = 16
 
@@ -131,5 +131,83 @@ fun main() {
     else{
         println("Grow up!")
     }
+
+    when (age){
+        in 21..100 -> println("You may dring in USA")
+        in 18..20 -> println("You may vote in USA")
+        16, 17 -> println("You may drive in USA")
+        else -> println("Grow up!")
+    }
+    // kan skrives på følgende måde også
+    when (age){
+        !in 0..20 -> println("You may dring in USA") // betyder at det interval kun kører hvis den er udenfor dette spektrum
+        !in 0..17 -> println("You may vote in USA")
+        !in 0..16 -> println("You may drive in USA")
+        else -> println("Grow up!")
+    }
+
+    var season = 3
+    when(season){
+        1 -> println("Spring")
+        2 -> println("Summer")
+        3 -> { // Hvis man vil have flere ting i
+            println("Fall")
+            println("Autumn")
+        }
+        4 -> println("Winter")
+        else -> println("Invalid season")
+    }
+
+    var month = 3
+    when (month) {
+        in 3..5 -> println("Spring") // month 3 to 5
+        in 6..8 -> println("Summer") // month 6 to 8
+        in 9..11 -> println("Fall")
+        12, 1, 2 -> println("Winter") // reacts to 12, 1 and 2
+        else -> println("Invalid month")
+    }
+
+    var x : Any = 13.37 // x : Any -> betyder at programmet selv kan finde ud af hvilken type at den er
+    when(x){
+        is Int -> println("$x is aInteger")
+        is Double -> println("$x is a Double") // lavede man ! inden is, så ville man få dette  som svar hvis det ikke var en Double
+        is String -> println("$x is a String")
+        else -> println("$x is none of the above")
+    }
+
+    var x2 = 1
+    while (x2 <= 10){ // kører konstant så længe x er under eller lig med 10
+        print("$x2 ")
+        x2++
+    }
+    println("\nLoop is done") // \n er linebreak
+
+    var x3 = 100
+    while (x3 >= 0){
+        print("$x3 ") // udskriver nuværende tal
+        x3 -= 2 // trækker 2 fra hver gang lØkken køres
+    }
+    println("\nLoop is done")
+
+    var x4 = 6
+    do { // kører kun indtil kriterierne er opfuldt for at while == false
+        print("$x4 ")
+        x4++
+    }
+    while (x4 <= 10) // bliver kørt mindst en gang, selvom while == false
+    println("\nDo while loop is done")
+
+    var feltTemp = "Cold"
+    var roomTemp = 10
+
+    while (feltTemp == "Cold"){
+        roomTemp++
+        println("$roomTemp is stil cold")
+        if (roomTemp >= 20){
+            feltTemp = "comfy"
+            println("Room temperature is comfy now")
+        }
+    }
+
 
 }
