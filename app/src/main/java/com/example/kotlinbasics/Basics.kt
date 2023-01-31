@@ -226,6 +226,15 @@ fun main() {
     }
     println("\nFor loop 4 done")
 
+    var interval = 0
+    var responce = "It's over 9000"
+
+    while (interval <= 10000){
+        interval++
+        if (interval == 9001){
+            println(responce)
+        }
+    }
 
     var humidityLevel = 80
     var humidityFeel = "humid"
