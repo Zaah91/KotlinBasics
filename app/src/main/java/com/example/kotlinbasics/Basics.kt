@@ -248,4 +248,25 @@ fun main() {
         }
     }
 
+    for (i in 1 until 20){
+        print("$i ")
+        if (i/2 == 5){
+            break // finish loop
+        }
+    }
+    println("Done whit loop")
+    print("\n")
+
+    for (i in 1 until 20){
+        // 10/2 = 5 , derfor skrives den ikke
+        // 11/2 = 5,5 , derfor skrives den ikke (int)
+        // 20/2 = 5 , derfor skrives den ikke
+        if (i/2 == 5){
+            continue // afslutter if statement og går videre til næste trin
+        }
+        print("$i ")
+    }
+    print("Loop is done")
+
+
 }
